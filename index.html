@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Cadastro de Produtos</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 500px; margin: auto; }
+    input, button { margin: 8px 0; padding: 8px; width: 100%; }
+    .resultado { margin-top: 20px; background: #f0f0f0; padding: 10px; border-radius: 5px; }
+  </style>
 </head>
 <body>
-    <h1>Teste codigo de barras</h1>
-    <div>
-        <input type="text" id="nameInput" placeholder="Digite o nome do produto">
-        <input type="number" id="precoInput" placeholder="Digite o preço do produto">
-        <input type="number" id="barcodeInput" placeholder="Digite o código de barras do produto">
-        <button id="scanButton">cadastrar</button>
-    </div>
+  <h2>Cadastrar Produto</h2>
+  <input type="text" id="nome" placeholder="Nome do Produto" />
+  <input type="number" id="preco" placeholder="Preço" />
+  <input type="text" id="codigo" placeholder="Código de Barras" />
+  <button onclick="cadastrarProduto()">Cadastrar</button>
 
-    <div>
-        <h2>Lista de produtos</h2>
-        <ul id="productList">
-            <!-- Lista de produtos será preenchida aqui -->
-            <input type="number" id="searchInput" placeholder="Pesquisar produto">
-        </ul>
-        <button id='searchBtn'>Pesquisar</button>
-    </div>
+  <hr>
 
-    <script src="./script.js"></script>
+  <h2>Buscar Produto</h2>
+  <input type="text" id="buscaCodigo" placeholder="Digite o código de barras" />
+  <button onclick="buscarProduto()">Buscar</button>
+
+  <div class="resultado" id="resultadoBusca"></div>
+
+  <script src="script.js"></script> 
 </body>
 </html>

@@ -1,46 +1,50 @@
-btnCadastro = document.querySelector('#scanButton');
-inputName = document.querySelector('#nameInput');
-inputPreco = document.querySelector('#precoInput');
-btnSearch = document.querySelector('#searchBtn');
-inputBarcode = document.querySelector('#barcodeInput')
-
-
-btnCadastro.addEventListener('click', function() {
-    let nameProduto = inputName.value;
-    let precoProduto = inputPreco.value;
-    let codeproduto = inputBarcode.value;
-    if (nameProduto && precoProduto && codeproduto) {
-        alert(`Produto cadastrado:\nNome: ${nameProduto}\nPreço: ${precoProduto}\nCódigo: ${codeproduto}`);
+function cadastrarProduto() {
+    const nome = document.getElementById('nome').value.trim();
+    const preco = parseFloat(document.getElementById('preco').value);
+    const codigo = document.getElementById('codigo').value.trim();
+  
+    if (!nome || isNaN(preco) || !codigo) {
+      alert("Preencha todos os campos corretamente!");
+      return;
+    }
+  
+    const novoProduto = { nome, preco, codigo };
+  
+    const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  
+    const existente = produtos.find(p => p.codigo === codigo);
+    if (existente) {
+      alert("Esse código de barras já está cadastrado.");
+      return;
+    }
+  
+    produtos.push(novoProduto);
+    localStorage.setItem('produtos', JSON.stringify(produtos));
+  
+    alert("Produto cadastrado com sucesso!");
+  
+    document.getElementById('nome').value = '';
+    document.getElementById('preco').value = '';
+    document.getElementById('codigo').value = '';
+  }
+  
+  function buscarProduto() {
+    const codigoBusca = document.getElementById('buscaCodigo').value.trim();
+    const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  
+    const produto = produtos.find(p => p.codigo === codigoBusca);
+  
+    const resultadoDiv = document.getElementById('resultadoBusca');
+  
+    if (produto) {
+      resultadoDiv.innerHTML = `
+        <strong>Produto Encontrado:</strong><br>
+        Nome: ${produto.nome}<br>
+        Preço: R$ ${produto.preco.toFixed(2)}<br>
+        Código de Barras: ${produto.codigo}
+      `;
     } else {
-        alert('Por favor, preencha todos os campos.');
+      resultadoDiv.innerHTML = `<strong>Produto não encontrado.</strong>`;
     }
-
-    const produto = {
-        id: codeproduto,
-        nome: nameProduto,
-        preco: precoProduto
-      };
-      
-      localStorage.setItem('produto', JSON.stringify(produto));
-    
-      let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
-    console.log(produtoSalvo);
-})
-
-btnSearch.addEventListener('click', () => {
-        let codeproduto = inputBarcode.value;
-        if (codeproduto) {
-            const produtoSalvo = JSON.parse(localStorage.getItem('produto'));
-            if (produtoSalvo && produtoSalvo.id === codeproduto) {
-                alert(`Produto encontrado:\nNome: ${produtoSalvo.nome}\nPreço: ${produtoSalvo.preco}\nCódigo: ${produtoSalvo.id}`);
-            } else {
-                alert('Produto não encontrado.');
-            }
-        } else {
-            alert('Por favor, insira o código do produto para buscar.');
-        }
-    }
-)
-
-
-
+  }
+  
