@@ -1,16 +1,12 @@
-import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import Main from './components/Main'
+import MainContent from './components/MainContent'
 import './App.css'
 
 function App() {
   return (
-    <div className=''>
-      <Header />
-      <div className='flex w-full h-screen'>
+    <div className='flex h-full w-full'>
         <Sidebar />
-        <Main />
-      </div>
+        <MainContent />
     </div>
   )
 }
