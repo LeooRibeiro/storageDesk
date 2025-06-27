@@ -96,7 +96,7 @@ const InfoDashboard = () => {
                   value={form.nome}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 rounded px-3 py-2 mt-1"
+                  className="w-full border border-gray-400 rounded px-3 py-2 mt-1"
                 />
               </div>
 

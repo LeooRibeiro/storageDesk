@@ -11,14 +11,14 @@ const products = [
   {
     name: 'Mouse Logitech MX Master',
     category: 'Acessórios',
-    price: 'R$ 299,00',
-    stock: '32 unidades',
+    price: 'R$ 199,00',
+    stock: '42 unidades',
     stockClass: 'text-green-600'
   },
   {
     name: 'Teclado Mecânico RGB',
     category: 'Acessórios',
-    price: 'R$ 189,00',
+    price: 'R$ 289,00',
     stock: '8 unidades',
     stockClass: 'text-yellow-500'
   },
@@ -33,8 +33,8 @@ const products = [
     name: 'Webcam HD 1080p',
     category: 'Acessórios',
     price: 'R$ 149,00',
-    stock: 'Sem estoque',
-    stockClass: 'text-red-500'
+    stock: '50',
+    stockClass: 'text-green-600'
   },
   {
     name: 'Webcam HD 1080p',
