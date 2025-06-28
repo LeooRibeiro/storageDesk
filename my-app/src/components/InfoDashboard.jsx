@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { FiBox } from "react-icons/fi";
+import { SlSocialDropbox } from "react-icons/sl"
+import { TbBoxOff } from "react-icons/tb";
+import { MdAttachMoney } from "react-icons/md";
 
 const InfoDashboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -48,7 +52,7 @@ const InfoDashboard = () => {
             <p className="text-sm text-gray-500">Total de Itens</p>
             <h3 className="text-xl font-semibold text-gray-900"> 1,234 </h3>
           </div>
-          <div className="bg-gray-100 rounded-full p-3">{/* ícone aqui */}</div>
+          <div className="bg-gray-100 rounded-full p-1"><SlSocialDropbox size={26}/></div>
         </div>
 
         {/* Card 2 */}
@@ -57,7 +61,7 @@ const InfoDashboard = () => {
             <p className="text-sm text-gray-500">Produtos em Estoque</p>
             <h3 className="text-xl font-semibold text-gray-900"> 987 </h3>
           </div>
-          <div className="bg-gray-100 rounded-full p-3">{/* ícone aqui */}</div>
+          <div className="bg-gray-100 rounded-full p-1"><FiBox size={26}/></div>
         </div>
 
         {/* Card 3 */}
@@ -66,7 +70,7 @@ const InfoDashboard = () => {
             <p className="text-sm text-gray-500">Produtos em Falta</p>
             <h3 className="text-xl font-semibold text-gray-900"> 43 </h3>
           </div>
-          <div className="bg-gray-100 rounded-full p-3">{/* ícone aqui */}</div>
+          <div className="bg-gray-100 rounded-full p-1"><TbBoxOff size={26}/></div>
         </div>
 
         {/* Card 4 */}
@@ -75,7 +79,7 @@ const InfoDashboard = () => {
             <p className="text-sm text-gray-500">Valor total em patrimonio</p>
             <h3 className="text-xl font-semibold text-gray-900"> R$ 45.231 </h3>
           </div>
-          <div className="bg-gray-100 rounded-full p-3">{/* ícone aqui */}</div>
+          <div className="bg-gray-100 rounded-full p-1"><MdAttachMoney size={26}/></div>
         </div>
       </div>
 

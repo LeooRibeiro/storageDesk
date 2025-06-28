@@ -7,7 +7,7 @@ import { GoGear } from "react-icons/go";
 
 const Menu = () => {
   return (
-    <div className="w-3/12 h-screen bg-blue-500 p-4">
+    <div className="w-3/12 min-h-full bg-blue-500 p-4">
       <div className="flex flex-col items-start w-full">
         <div className="h-10 text-2xl text-white font-medium flex justify-center items-center gap-3">
           <p className="w-10 h-10 bg-blue-400 rounded-md flex justify-center items-center"><BsFillBoxSeamFill/></p>
